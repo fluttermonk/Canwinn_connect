@@ -1,0 +1,10 @@
+import 'package:flutter/material.dart';
+Color primaryColor=const Color(0xff7E54A0);
+Color BackGroundColor=const Color(0xFFF3F3F7);
+Color secondaryColor=const Color(0xFF11B9AC);
+Color DarkBorderColor=const Color(0xFFABABAB);
+Color LightBorderColor=const Color(0xffE2E2E2);
+Color LineColor=const Color(0xff6F6F6F);
+Color OTPBorderColor=const Color(0xff674FA3);
+Color NormalTextColor=const Color(0xff6E6C6F);
+Color BoldTextColor=const Color(0xff000000);
