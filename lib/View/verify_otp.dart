@@ -1,3 +1,4 @@
+import 'package:canwinn_project/Constants/color_constants.dart';
 import 'package:canwinn_project/Constants/font_constants.dart';
 import 'package:canwinn_project/Constants/image_constants.dart';
 import 'package:canwinn_project/View/widgets/Custombutton.dart';
@@ -32,7 +33,9 @@ class _VerfiyOtpScreensState extends State<VerfiyOtpScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: BackGroundColor,
       appBar: AppBar(
+         backgroundColor: BackGroundColor,
         leading: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back_ios_new)),
       ),
       body: SingleChildScrollView(
