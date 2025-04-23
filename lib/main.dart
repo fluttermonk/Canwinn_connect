@@ -1,4 +1,5 @@
 import 'package:canwinn_project/View/Splash.dart';
+import 'package:canwinn_project/View/verify_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: VerfiyOtpScreens(),
       ),
     );
   }
