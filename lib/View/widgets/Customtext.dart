@@ -6,8 +6,8 @@ class CustomTextField extends StatelessWidget {
 final TextEditingController controller;
 final String label;
 final bool obscureText;
-final Image? prefiximage;
-final Image? suffiximage;
+final Widget? prefiximage;
+final Widget? suffiximage;
 final String? Function(String?) validator;
   const CustomTextField({
     super.key,

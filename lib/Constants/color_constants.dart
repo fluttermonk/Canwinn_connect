@@ -8,3 +8,7 @@ Color LineColor=const Color(0xff6F6F6F);
 Color OTPBorderColor=const Color(0xff674FA3);
 Color NormalTextColor=const Color(0xff6E6C6F);
 Color BoldTextColor=const Color(0xff000000);
+Color DashboardTextcolor=const Color(0xff4E4E4E);
+Color BannerColor=const Color(0xff2EC0B5);
+Color Getafr=const Color(0xff737373);
+Color White=const Color(0xffFFFFFF);
