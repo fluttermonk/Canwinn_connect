@@ -42,3 +42,13 @@ const InteriorImage="assets/images/interior-view-operating-room 1.png";
 const DiscountApplicance="assets/images/8598084 1.png";
 const PickserviceFirst="assets/images/3556952 1.png";
 const HospitalDetailImage="assets/images/Tiny doctors and patients near hospital flat vector illustration 1.png";
+const Offercleaning="assets/images/Depth 4, Frame 1.png";
+const Homecleaning="assets/images/Depth 5, Frame 0.png";
+const wellnessHealthLettring="assets/images/wellness-health-lettering-chalkboard 1.png";
+const WallPhoto="assets/images/WallPhoto.png";
+const LimitedTime="assets/images/LimitedTime.png";
+const FreeHomeConsultant="assets/images/freehomeConsultant.png";
+
+
+
+

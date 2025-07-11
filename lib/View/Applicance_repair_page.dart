@@ -1,6 +1,7 @@
 import 'package:canwinn_project/Constants/image_constants.dart';
 import 'package:flutter/material.dart';
 import '../../Constants/color_constants.dart';
+import '../Constants/font_constants.dart';
 
 class ApplianceRepairScreen extends StatefulWidget {
   const ApplianceRepairScreen({super.key});
@@ -191,12 +192,12 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                    backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: const Text('Book Now'),
+                  child: Text('Book Now',style: Mostly,),
                 ),
               )
             ]

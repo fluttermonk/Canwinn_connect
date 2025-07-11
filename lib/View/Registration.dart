@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'package:canwinn_project/ViewModel/Controller/Auth_controller.dart';
 
 import '../Constants/text_constants.dart';
+import '../data/repositories/followups_repository_impl.dart';
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
   @override
@@ -18,8 +19,10 @@ class RegistrationScreen extends StatefulWidget {
 class _LoginScreenState extends State<RegistrationScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController ConfirmpasswordController = TextEditingController();
   final TextEditingController NumberController = TextEditingController();
   final TextEditingController UsernameController = TextEditingController();
+  FollowupsRepositoryImpl followupsRepositoryImpl = FollowupsRepositoryImpl();
   final _key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -98,6 +101,19 @@ class _LoginScreenState extends State<RegistrationScreen> {
                         suffiximage: Image.asset(visibilityIcon,width: 20,height: 20,),
                         validator: (value){
                           if(value==null||value.isEmpty){
+                            return returnconfirmpassword;
+                          }
+                          return null;
+                        }),
+                    SizedBox(height: 10.w,),
+                    CustomTextField(
+                        controller:ConfirmpasswordController,
+                        obscureText: true,
+                        label: password,
+                        prefiximage: Image.asset(encryptedIcon,width: 20,height: 20,),
+                        suffiximage: Image.asset(visibilityIcon,width: 20,height: 20,),
+                        validator: (value){
+                          if(value==null||value.isEmpty){
                             return returnpassword;
                           }
                           return null;
@@ -105,9 +121,16 @@ class _LoginScreenState extends State<RegistrationScreen> {
 
                     SizedBox(height: 20.h,),
                     CustomButton(text:Signup, onPressed: (){
+                      followupsRepositoryImpl.RegisterUser(
+                          name: UsernameController.text.toString(),
+                          email: emailController.text.toString(),
+                          password: passwordController.text.toString(),
+                          password_confirmation: ConfirmpasswordController.text.toString());
                       // if(_key.currentState!.validate()){
                       //
                       // }
+
+
                       Get.toNamed('/Otp');
                     }),
                     SizedBox(height: 10.h,),

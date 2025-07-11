@@ -17,6 +17,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final authController = Get.put(AuthController());
   final _key=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -72,9 +73,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 SizedBox(height: 10.h,),
-                CustomButton(text:Signin, onPressed: (){
-                  Get.toNamed('/Dashboard');
-                }
+                  CustomButton(
+                    text: Signin,
+                    onPressed: () {
+                      if (_key.currentState!.validate()) {
+                        authController.loginUser(email: emailController.text.toString(), password:passwordController.text.toString());
+                      }
+                    },
                   ),
                   SizedBox(height: 10.h,),
                   Row(

@@ -1,4 +1,9 @@
 import 'package:canwinn_project/Constants/font_constants.dart';
+import 'package:canwinn_project/Constants/image_constants.dart';
+import 'package:canwinn_project/View/Dashboard.dart';
+import 'package:canwinn_project/View/Offers_page.dart';
+import 'package:canwinn_project/View/Profile_page.dart';
+import 'package:canwinn_project/View/Service_page.dart';
 import 'package:canwinn_project/View/view_detail_page.dart';
 import 'package:canwinn_project/View/widgets/CustomBottomnavigation.dart';
 import 'package:canwinn_project/View/widgets/bottom_bar.dart';
@@ -165,27 +170,6 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
             ),
           ),
           // Custom Bottom Navigation Bar
-          CustomBottomNavBarr(
-            currentIndex: _selectedIndex,
-            onTap: (int index) {
-              setState(() => _selectedIndex = index);
-
-              switch (index) {
-                case 0:
-                  Get.offAllNamed('/Dashboard');
-                  break;
-                case 1:
-                  Get.toNamed('/Offers');
-                  break;
-                case 2:
-                  Get.toNamed('/Services');
-                  break;
-                case 3:
-                  Get.toNamed('/Account');
-                  break;
-              }
-            },
-          ),
         ],
       ),
     );

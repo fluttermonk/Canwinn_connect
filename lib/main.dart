@@ -17,6 +17,7 @@ import 'View/Confirmation_Appointment.dart';
 import 'View/Doctor_profile_screen.dart';
 import 'View/Emergency_Contacts.dart';
 import 'View/Hosptial_nearme.dart';
+import 'View/Offers_page.dart';
 import 'View/Pharamacy_Screen.dart';
 import 'View/view_detail_page.dart';
 
@@ -55,6 +56,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/Pharmacy', page: ()=>PharmacyScreen()),
         GetPage(name: '/hospitalnearme', page: ()=>HospitalListScreen()),
         GetPage(name: '/hospitaldetailoage', page: ()=>HospitalDetailsScreen()),
+        GetPage(name: '/offers', page: ()=>OffersScreen()),
+
+
 
       ],
       ),

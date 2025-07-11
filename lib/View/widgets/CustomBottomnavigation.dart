@@ -1,3 +1,4 @@
+import 'package:canwinn_project/Constants/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../ViewModel/Controller/bottom_nav_controller.dart';
@@ -9,6 +10,7 @@ class CustomBottomNavBar extends StatelessWidget {
       currentIndex: navController.selectedIndex.value, // ✅ .value inside Obx
       onTap: navController.changeIndex,
       type: BottomNavigationBarType.fixed,
+      backgroundColor: BackGroundColor,
       selectedItemColor: Colors.purple,
       unselectedItemColor: Colors.black,
       showUnselectedLabels: true,

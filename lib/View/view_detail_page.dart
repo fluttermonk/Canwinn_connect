@@ -244,26 +244,6 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
               label: const Text("Emergency Call 102", style: TextStyle(color: Colors.white)),
             ),
           ),
-          CustomBottomNavBarr(
-            currentIndex: _selectedIndex,
-            onTap: (int index) {
-              setState(() => _selectedIndex = index);
-              switch (index) {
-                case 0:
-                  Get.offAllNamed('/Dashboard');
-                  break;
-                case 1:
-                  Get.toNamed('/Offers');
-                  break;
-                case 2:
-                  Get.toNamed('/Services');
-                  break;
-                case 3:
-                  Get.toNamed('/Account');
-                  break;
-              }
-            },
-          ),
         ],
       ),
     );

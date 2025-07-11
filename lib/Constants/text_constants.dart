@@ -8,6 +8,8 @@ String email ="Email";
 String returnmail='Please enter email';
 String returnusername='Please enter Username';
 String returnpassword='Please enter Password';
+String returnconfirmpassword='Please enter confirm Password';
+
 String password='Password';
 String login="Log In";
 String otp = "Enter OTP Code";
