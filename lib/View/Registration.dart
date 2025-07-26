@@ -4,30 +4,24 @@ import 'package:canwinn_project/Constants/image_constants.dart';
 import 'package:canwinn_project/View/widgets/Custombutton.dart';
 import 'package:canwinn_project/View/widgets/Customtext.dart';
 import 'package:canwinn_project/View/widgets/Socialbutton.dart';
+import 'package:canwinn_project/ViewModel/Controller/registers_users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:canwinn_project/ViewModel/Controller/Auth_controller.dart';
 
 import '../Constants/text_constants.dart';
-import '../data/repositories/followups_repository_impl.dart';
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
   @override
   State<RegistrationScreen> createState() => _LoginScreenState();
 }
 class _LoginScreenState extends State<RegistrationScreen> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController ConfirmpasswordController = TextEditingController();
-  final TextEditingController NumberController = TextEditingController();
-  final TextEditingController UsernameController = TextEditingController();
-  FollowupsRepositoryImpl followupsRepositoryImpl = FollowupsRepositoryImpl();
+  RegistersController registersController = Get.put(RegistersController());
   final _key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       body:
       SafeArea(
         child: SingleChildScrollView(
@@ -38,97 +32,93 @@ class _LoginScreenState extends State<RegistrationScreen> {
                   child: GestureDetector(
                     onTap: (){
                       Get.back();
-                    },child: Image.asset(Backbutton),),width:40,),
+                    },child: Image.asset(backButton),),width:40,),
              Form(
               key: _key,
               child: Padding(
                 padding:  EdgeInsets.all(20.w),
                 child: Column(
                   children: [
-                    Image.asset(Canwinn,width: 128.29685974121094,height: 168),
-                    Text(Signup,
+                    Image.asset(canWinn,width: 128.29685974121094,height: 168),
+                    Text('sign_up'.tr,
                       style: BoldText,),
                     SizedBox(height: 10.w,),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(EnterCode,
+                      child: Text('enter_code'.tr,
                         textAlign: TextAlign.center,
-                        style: NormalText,),
+                        style: normalText,),
                     ),
                     SizedBox(height: 10.w,),
                     CustomTextField(
-                        controller:UsernameController ,
+                        controller:registersController.UsernameController ,
                         obscureText: false,
-                        label: username,
-                        prefiximage: Image.asset(Account,width: 20,height: 20,),
+                        label: 'username'.tr,
+                        prefiximage: Image.asset(account,width: 20,height: 20,),
                         validator: (value){
                           if(value==null||value.isEmpty){
-                            return returnusername;
+                            return 'return_username'.tr;
                           }
                           return null;
                         }),
                     SizedBox(height: 10.w,),
                     CustomTextField(
-                        controller:emailController ,
+                        controller:registersController.emailController ,
                         obscureText: false,
-                        label: email,
+                        label:'email'.tr,
                         prefiximage: Image.asset(mailIcon,width: 20,height: 20,),
                         validator: (value){
                           if(value==null||value.isEmpty){
-                            return returnmail;
+                            return 'return_mail'.tr;
                           }
                           return null;
                         }),
                     SizedBox(height: 10.w,),
                     CustomTextField(
-                        controller:NumberController ,
+                        controller:registersController.NumberController ,
                         obscureText: false,
-                        label: number,
+                        label: 'number'.tr,
                          // prefiximage: Image.asset(mailIcon,width: 20,height: 20,),
-                        prefiximage: Icon(Icons.phone,color: NormalTextColor,),
+                        prefiximage: Icon(Icons.phone,color: normalTextColor,),
                         validator: (value){
                           if(value==null||value.isEmpty){
-                            return returnnumber;
+                            return 'return_number'.tr;
                           }
                           return null;
                         }),
                     SizedBox(height: 10.w,),
                     CustomTextField(
-                        controller:passwordController ,
+                        controller:registersController.passwordController ,
                         obscureText: true,
-                        label: password,
+                        label: 'password'.tr,
                         prefiximage: Image.asset(encryptedIcon,width: 20,height: 20,),
                         suffiximage: Image.asset(visibilityIcon,width: 20,height: 20,),
                         validator: (value){
                           if(value==null||value.isEmpty){
-                            return returnconfirmpassword;
+                            return 'return_confirm_password'.tr;
                           }
                           return null;
                         }),
                     SizedBox(height: 10.w,),
                     CustomTextField(
-                        controller:ConfirmpasswordController,
+                        controller:registersController.ConfirmpasswordController,
                         obscureText: true,
-                        label: password,
+                        label: 'password'.tr,
                         prefiximage: Image.asset(encryptedIcon,width: 20,height: 20,),
                         suffiximage: Image.asset(visibilityIcon,width: 20,height: 20,),
                         validator: (value){
                           if(value==null||value.isEmpty){
-                            return returnpassword;
+                            return 'return_password'.tr;
                           }
                           return null;
                         }),
 
                     SizedBox(height: 20.h,),
-                    CustomButton(text:Signup, onPressed: (){
-                      followupsRepositoryImpl.RegisterUser(
-                          name: UsernameController.text.toString(),
-                          email: emailController.text.toString(),
-                          password: passwordController.text.toString(),
-                          password_confirmation: ConfirmpasswordController.text.toString());
-                      // if(_key.currentState!.validate()){
-                      //
-                      // }
+                    CustomButton(text:'sign_up'.tr, onPressed: (){
+
+                      if(_key.currentState!.validate()){
+
+                      }
 
 
                       Get.toNamed('/Otp');
@@ -137,12 +127,12 @@ class _LoginScreenState extends State<RegistrationScreen> {
                     Row(
                       children: [
                         Expanded(flex:2,child:Divider(
-                          color: LineColor,
+                          color: lineColor,
                           thickness: 1,
                         )),
-                        Expanded(flex:1,child: Center(child: Text(or,style: NormalUser,))),
+                        Expanded(flex:1,child: Center(child: Text('or'.tr,style: normalUser,))),
                         Expanded(flex:2,child:Divider(
-                          color: LineColor,
+                          color: lineColor,
                           thickness: 1,
                         )),
                       ],
@@ -151,15 +141,15 @@ class _LoginScreenState extends State<RegistrationScreen> {
                     Row(
                       children: [
                         Expanded(child: SocialButton(
-                          text: google,
-                          imagePath: Google,
+                          text: 'google_text'.tr,
+                          imagePath: google,
                           onTap: (){
                           }
                           ,)),
                         SizedBox(width: 10.w,),
                         Expanded(child: SocialButton(
-                          text: facebook,
-                          imagePath: Facebook,
+                          text: 'facebook_text'.tr,
+                          imagePath: facebook,
                           onTap: (){
                           }
                           ,))

@@ -25,7 +25,7 @@ final String? Function(String?) validator;
 
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: NormalUser,
+        labelStyle: normalUser,
         contentPadding:  EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
         prefixIcon: prefiximage!=null
             ?Padding(padding:EdgeInsets.all(12.0),
@@ -38,7 +38,7 @@ final String? Function(String?) validator;
         )
             :null,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: LightBorderColor,width: 2),
+          borderSide: BorderSide(color: lightBorderColor,width: 2),
           borderRadius: BorderRadius.circular(40),
         ),
         focusedBorder: OutlineInputBorder(

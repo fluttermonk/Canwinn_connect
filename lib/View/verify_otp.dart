@@ -30,30 +30,30 @@ class _VerfiyOtpScreensState extends State<VerfiyOtpScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: BackGroundColor,
+       backgroundColor: backGroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Stack(
             children:[ Positioned(
-              top: 10,
+              top: 10,width:40,
               child: GestureDetector(
                 onTap: (){
                   Get.back();
-                },child: Image.asset(Backbutton),),width:40,),
+                },child: Image.asset(backButton),),),
               SafeArea(
                 child: Padding(
                     padding:  EdgeInsets.all(20.w),
                 child:Column(
                 children: [
-                Image.asset(Canwinn,width: 128.29685974121094,height: 168),
+                Image.asset(canWinn,width: 128.29685974121094,height: 168),
                 SizedBox(height: 20.w,),
-            Text(otpcode,
+            Text('otp_code'.tr,
               style: BoldText,),
             Center(
               child: Text(
-                otpsentto,
+                'otp_sent_to'.tr,
                 textAlign: TextAlign.center,
-                style: NormalText,
+                style: normalText,
               ),
             ),
             SizedBox(height: 10,),
@@ -73,7 +73,7 @@ class _VerfiyOtpScreensState extends State<VerfiyOtpScreens> {
             SizedBox(height: 10,),
             Row(
                 children: [
-                Text("Didn’t get OTP? ",style: OTPText,),
+                Text("Didn’t get OTP? ",style: otpText,),
                 TextButton(
             onPressed: () {
             },

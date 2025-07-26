@@ -6,54 +6,54 @@ TextStyle BoldText=TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 30.sp,
 );
-TextStyle NormalText=TextStyle(
+TextStyle normalText=TextStyle(
   fontFamily: "Raleway",
   fontSize: 16,
-  color: NormalTextColor,
+  color: normalTextColor,
 );
-TextStyle NormalUser=TextStyle(
+TextStyle normalUser=TextStyle(
   fontFamily: "Raleway",
   fontSize: 18,
-  color: NormalTextColor,
+  color: normalTextColor,
 );
-TextStyle Forgot=TextStyle(
+TextStyle forgot=TextStyle(
   fontFamily: "Raleway",
   fontSize: 16,
   color: secondaryColor,
 
 );
-TextStyle Social=TextStyle(
+TextStyle social=TextStyle(
   fontFamily: "Raleway",
   fontSize: 21,
   color: secondaryColor,
 );
-TextStyle account=TextStyle(
+TextStyle accounts=TextStyle(
   fontFamily: "Raleway",
   fontSize: 16,
-  color: NormalTextColor,
+  color: normalTextColor,
 );
-TextStyle OTPText=TextStyle(
+TextStyle otpText=TextStyle(
   fontFamily: "Raleway",
   fontSize: 16,
-  color: NormalTextColor,
+  color: normalTextColor,
 );
-TextStyle Categories=TextStyle(
+TextStyle categories=TextStyle(
   fontFamily: "Raleway",
   fontSize: 16.sp,
- color:BoldTextColor
+ color:boldTextColor
 );
-TextStyle Earn100=TextStyle(
+TextStyle earn100=TextStyle(
     fontFamily: "Raleway",
     fontSize: 18,
     fontWeight: FontWeight.bold,
-    color:BoldTextColor
+    color:boldTextColor
 );
-TextStyle Getaa=TextStyle(
+TextStyle getaa=TextStyle(
     fontFamily: "Raleway",
     fontSize: 16,
-    color:Getafr
+    color:getafr
 );
-TextStyle Mostly=TextStyle(
+TextStyle mostly=TextStyle(
     color:Colors.white
 );
 

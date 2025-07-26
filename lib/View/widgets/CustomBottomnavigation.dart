@@ -10,7 +10,7 @@ class CustomBottomNavBar extends StatelessWidget {
       currentIndex: navController.selectedIndex.value, // ✅ .value inside Obx
       onTap: navController.changeIndex,
       type: BottomNavigationBarType.fixed,
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       selectedItemColor: Colors.purple,
       unselectedItemColor: Colors.black,
       showUnselectedLabels: true,

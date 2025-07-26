@@ -19,11 +19,11 @@ class DoctorAppointmentScreen extends StatelessWidget {
       appBar: AppBar(
         leading: BackButton(),
         title: Text("Doctor’s Appointment"),
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(16),
@@ -38,7 +38,7 @@ class DoctorAppointmentScreen extends StatelessWidget {
               SizedBox(height: 16),
               SizedBox(height: 8),
               CustomDoctorServiceCard(
-                imagePath: hospitalNearme,
+                imagePath: hospitalNearMe,
                 title: 'Book Clinic Appointment',
                 onTap: () {
                   Get.to(DoctorsAppointmentPage());
@@ -67,10 +67,10 @@ class DoctorAppointmentScreen extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    doctorCategoryBox(Doctor, "General\nPhysician"),
-                    doctorCategoryBox(Cute, "Skin &\nHair"),
-                    doctorCategoryBox(Woman, "Women’s\nHealth"),
-                    doctorCategoryBox(Floss, "Dental\nCare"),
+                    doctorCategoryBox(doctor, "General\nPhysician"),
+                    doctorCategoryBox(cute, "Skin &\nHair"),
+                    doctorCategoryBox(woman, "Women’s\nHealth"),
+                    doctorCategoryBox(floss, "Dental\nCare"),
                   ],
                 ),
               ),
@@ -85,16 +85,16 @@ class DoctorAppointmentScreen extends StatelessWidget {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
-                  serviceTile(Phone, "Emergency Contacts", () {
+                  serviceTile(phone, "Emergency Contacts", () {
                     Get.to(EmergencyContactsScreen());
                   }),
                   serviceTile(ambulance, "Ambulance Service", () {
                     Get.to(AmbulanceServiceScreen());
                   }),
-                  serviceTile(HospitalBed, "Bed Availability", () {
+                  serviceTile(hospitalBed, "Bed Availability", () {
                     Get.to(BedAvailabilityScreen());
                   }),
-                  serviceTile(Pharmacy, "24x7 Pharmacy", () {
+                  serviceTile(pharmacy, "24x7 Pharmacy", () {
                     Get.to(PharmacyScreen());
                   }),
                 ],

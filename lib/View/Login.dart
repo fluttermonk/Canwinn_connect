@@ -4,28 +4,23 @@ import 'package:canwinn_project/Constants/image_constants.dart';
 import 'package:canwinn_project/View/widgets/Custombutton.dart';
 import 'package:canwinn_project/View/widgets/Customtext.dart';
 import 'package:canwinn_project/View/widgets/Socialbutton.dart';
+import 'package:canwinn_project/ViewModel/Controller/login_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:canwinn_project/ViewModel/Controller/Auth_controller.dart';
-import '../Constants/text_constants.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final authController = Get.put(AuthController());
+  LoginController loginController=Get.put(LoginController());
   final _key=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
-      body:
-          
-      SafeArea(
+      backgroundColor: backGroundColor,
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
             key: _key,
@@ -33,35 +28,35 @@ class _LoginScreenState extends State<LoginScreen> {
               padding:  EdgeInsets.all(20.w),
               child: Column(
                 children: [
-                  Image.asset(Canwinn,width: 128.29685974121094,height: 168),
-                  Text(Signin,
+                  Image.asset(canWinn,width: 128.29685974121094,height: 168),
+                  Text('sign_in'.tr,
                   style: BoldText,),
                   SizedBox(height: 10.w,),
-                  Text(signinstatement,
+                  Text('sign_in_statement'.tr,
                     textAlign: TextAlign.center,
-                  style: NormalText,),
+                  style: normalText,),
                   SizedBox(height: 10.w,),
                   CustomTextField(
-                      controller:emailController ,
+                      controller:loginController.emailController ,
                       obscureText: false,
-                      label: email,
+                      label: 'email'.tr,
                      prefiximage: Image.asset(mailIcon,width: 20,height: 20,),
                       validator: (value){
                         if(value==null||value.isEmpty){
-                          return returnmail;
+                          return 'return_mail'.tr;
                         }
                         return null;
                       }),
                   SizedBox(height: 10.w,),
                   CustomTextField(
-                      controller:passwordController ,
+                      controller:loginController.passwordController ,
                       obscureText: true,
-                      label: password,
+                      label: 'password'.tr,
                       prefiximage: Image.asset(encryptedIcon,width: 20,height: 20,),
                       suffiximage: Image.asset(visibilityIcon,width: 20,height: 20,),
                       validator: (value){
                         if(value==null||value.isEmpty){
-                          return returnpassword;
+                          return 'return_password'.tr;
                         }
                         return null;
                       }),
@@ -69,15 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(forgotpassword,style: Forgot,),
+                      Text('forgot_password'.tr,style: forgot,),
                     ],
                   ),
                 SizedBox(height: 10.h,),
                   CustomButton(
-                    text: Signin,
+                    text:'sign_in'.tr,
                     onPressed: () {
                       if (_key.currentState!.validate()) {
-                        authController.loginUser(email: emailController.text.toString(), password:passwordController.text.toString());
+                         loginController.loginUsers();
+                        //authController.loginUser(email: emailController.text.toString(), password:passwordController.text.toString());
                       }
                     },
                   ),
@@ -85,12 +81,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       Expanded(flex:2,child:Divider(
-                        color: LineColor,
+                        color: lineColor,
                         thickness: 1,
                       )),
-                      Expanded(flex:1,child: Center(child: Text(or,style: NormalUser,))),
+                      Expanded(flex:1,child: Center(child: Text('or'.tr,style: normalUser,))),
                       Expanded(flex:2,child:Divider(
-                        color: LineColor,
+                        color: lineColor,
                         thickness: 1,
                       )),
                     ],
@@ -99,15 +95,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       Expanded(child: SocialButton(
-                        text: google,
-                        imagePath: Google,
+                        text: 'google_text'.tr,
+                        imagePath: google,
                         onTap: (){
                         }
                         ,)),
                       SizedBox(width: 10.w,),
                       Expanded(child: SocialButton(
-                        text: facebook,
-                        imagePath: Facebook,
+                        text: 'facebook'.tr,
+                        imagePath: facebook,
                         onTap: (){
                         }
                         ,))
@@ -117,12 +113,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(donthave,style: account,),
+                      Text('dont_have'.tr,style:accounts,),
                       InkWell(
                         onTap: (){
                           Get.toNamed('/Registration');
                         },
-                        child: Text(Signup,style:TextStyle(color:BoldTextColor,fontSize: 16.sp)
+                        child: Text('sign_up'.tr,style:TextStyle(color:boldTextColor,fontSize: 16.sp)
                         
                         ),
                       )],

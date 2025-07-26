@@ -21,9 +21,9 @@ class _ServicesScreenState extends State<ServicesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         title: const Text(
           'Services',
@@ -83,9 +83,9 @@ class _ServicesScreenState extends State<ServicesScreen> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _buildServiceCard('Healthcare', wellnessHealthLettring),
-                  _buildServiceCard('Appliance Repair', wellnessHealthLettring),
-                  _buildServiceCard('Salon', wellnessHealthLettring),
+                  _buildServiceCard('Healthcare', wellNessHealthLettring),
+                  _buildServiceCard('Appliance Repair', wellNessHealthLettring),
+                  _buildServiceCard('Salon', wellNessHealthLettring),
                 ],
               ),
             ),
@@ -101,14 +101,14 @@ class _ServicesScreenState extends State<ServicesScreen> {
               title: 'Get 20% off Dental Checkups',
               subtitle: 'Get a comprehensive dental checkup at half price. Offer valid for new patients only.',
               label: 'Limited Time',
-              image: LimitedTime,
+              image: limitedTime,
             ),
             const SizedBox(height: 12),
             _buildOfferCard(
               title: 'Free Home Repair Consultation',
               subtitle: 'Get a free consultation for any home repair service. No obligation.',
               label: 'New',
-              image: FreeHomeConsultant,
+              image: freeHomeConsultant,
             ),
             const SizedBox(height: 30),
           ],

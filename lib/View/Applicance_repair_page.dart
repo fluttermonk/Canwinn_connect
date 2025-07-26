@@ -25,9 +25,9 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         title: const Text(
           'Appliance Repair',
@@ -94,7 +94,7 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
                     SizedBox(
                       width: 80,
                       height: 80,
-                      child: Image.asset(DiscountApplicance), // replace with your image
+                      child: Image.asset(discountApplicance), // replace with your image
                     )
                   ],
                 ),
@@ -136,7 +136,7 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
                   children: [
                     SizedBox(
                       height: 300,
-                        child: Image.asset(PickserviceFirst,),
+                        child: Image.asset(pickServiceFirst,),
                       ), // Replace with image
                     const SizedBox(height: 10),
                     const Text(
@@ -163,7 +163,7 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
                         height: 50,
                         width: 50,
                         color: Colors.grey[300],
-                        child: Image.asset(PickserviceFirst, fit: BoxFit.cover),
+                        child: Image.asset(pickServiceFirst, fit: BoxFit.cover),
                       ),
                     ),
                     const SizedBox(width: 12),
@@ -197,7 +197,7 @@ class _ApplianceRepairScreenState extends State<ApplianceRepairScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: Text('Book Now',style: Mostly,),
+                  child: Text('Book Now',style: mostly,),
                 ),
               )
             ]

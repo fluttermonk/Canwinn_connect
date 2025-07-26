@@ -17,9 +17,9 @@ class EmergencyContactsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         leading: BackButton(color: Colors.black),
         title: Text(
@@ -53,7 +53,7 @@ class EmergencyContactsScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final contact = contactcontroller.emergencyContacts[index];
                 return ListTile(
-                  title: Text(contact['title'] ?? '',style: Earn100),
+                  title: Text(contact['title'] ?? '',style: earn100),
                   subtitle: Text(contact['phone'] ?? ''),
                   trailing: IconButton(
                     icon: Icon(Icons.call, color: Colors.green),
@@ -76,7 +76,7 @@ class EmergencyContactsScreen extends StatelessWidget {
                   Get.bottomSheet(
                     AddContactBottomSheet(),
                     isScrollControlled: true,
-                    backgroundColor: BackGroundColor,
+                    backgroundColor: backGroundColor,
                   );
                 },
                 child: Text("Add Personal Emergency Contact",style: TextStyle(color: Colors.white),),

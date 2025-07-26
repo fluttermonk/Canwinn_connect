@@ -24,7 +24,7 @@ class SocialButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.h),
         width: double.infinity,
         decoration: BoxDecoration(
-          border: Border.all(color: DarkBorderColor),
+          border: Border.all(color: darkBorderColor),
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(
@@ -34,7 +34,7 @@ class SocialButton extends StatelessWidget {
             SizedBox(width: 12.w),
             Text(
               text,
-              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w600,color: NormalTextColor),
+              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w600,color: normalTextColor),
             ),
           ],
         ),

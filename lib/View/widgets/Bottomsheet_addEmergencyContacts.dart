@@ -20,7 +20,7 @@ class AddContactBottomSheet extends StatelessWidget {
         bottom: MediaQuery.of(context).viewInsets.bottom + 40,
       ),
       decoration: BoxDecoration(
-        color: BackGroundColor,
+        color: backGroundColor,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Wrap(
@@ -69,7 +69,7 @@ class AddContactBottomSheet extends StatelessWidget {
                 );
                 Get.back(); // Close bottom sheet
               },
-              child: Text("Save Contact",style: TextStyle(color: White),),
+              child: Text("Save Contact",style: TextStyle(color: white),),
               style: ElevatedButton.styleFrom(
                 backgroundColor: primaryColor,
               ),

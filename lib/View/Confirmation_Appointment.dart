@@ -8,9 +8,9 @@ class AppointmentConfirmedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         title: const Text("Appointment Confirmed ✅"),
         actions: const [
           Padding(
@@ -53,7 +53,7 @@ class AppointmentConfirmedScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: OTPBorderColor,
+                      backgroundColor: otpBorderColor,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       minimumSize: const Size(double.infinity, 48),
                     ),
