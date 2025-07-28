@@ -1,6 +1,8 @@
 import 'package:canwinn_project/domain/repositories/auth_repository.dart';
+import 'package:canwinn_project/helper/storage_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegistersController extends GetxController {
   final LoginRepository loginRepository = LoginRepository();
@@ -27,20 +29,7 @@ class RegistersController extends GetxController {
     };
 
     try {
-      final response = await loginRepository.registerApi(data);
       isLoading.value = false;
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("User Registered Successfully"),
-          backgroundColor: Colors.green,
-        ),
-      );
-      usernameController.clear();
-      emailController.clear();
-      passwordController.clear();
-      confirmPasswordController.clear();
-      numberController.clear();
 
       Get.toNamed('/Otp', arguments: data);
     } catch (e) {
@@ -48,7 +37,6 @@ class RegistersController extends GetxController {
       debugPrint("Registration Error: $e");
 
       String errorMsg = e.toString().replaceFirst("Exception: ", "");
-
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMsg), backgroundColor: Colors.red),
       );
@@ -57,29 +45,29 @@ class RegistersController extends GetxController {
 
   Future<void> sendOtp(BuildContext context) async {
     isLoading.value = true;
-    final data = {
-      "name": usernameController.text.trim(),
-      "email": emailController.text.trim(),
-      "password": passwordController.text,
-      "password_confirmation": confirmPasswordController.text,
-      "phone_number": numberController.text.trim(),
-    };
-
     try {
       final response = await loginRepository.sendOtp({
-        "phone_number": data['phone_number'],
+        "phone_number": numberController.text.trim(),
       });
 
       isLoading.value = false;
-      print("uyiuiui uyi878 ${response}");
-      Get.toNamed('/Otp', arguments: data);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Otp Send Successfully${response['otp']}"),
+          content: Text("Otp Send Successfully: ${response['otp']}"),
           backgroundColor: Colors.green,
           duration: Duration(seconds: 5),
         ),
       );
+
+      final data = {
+        "name": usernameController.text.trim(),
+        "email": emailController.text.trim(),
+        "password": passwordController.text,
+        "password_confirmation": confirmPasswordController.text,
+        "phone_number": numberController.text.trim(),
+      };
+
+      Get.toNamed('/Otp', arguments: data);
     } catch (ex) {
       isLoading.value = false;
       String errorMsg = ex.toString().replaceFirst("Exception: ", "");
@@ -107,11 +95,12 @@ class RegistersController extends GetxController {
 
     try {
       final verifyResponse = await loginRepository.verifyOtp(verifyData);
-
       if (verifyResponse['message'] == "OTP Verified Successfully") {
         final registerResponse = await loginRepository.registerApi(
           registrationData,
         );
+
+        await StorageHelper.saveUserData(registerResponse);
 
         isLoading.value = false;
         ScaffoldMessenger.of(context).showSnackBar(
@@ -146,6 +135,37 @@ class RegistersController extends GetxController {
           content: Text("Error: $errorMsg"),
           backgroundColor: Colors.red,
         ),
+      );
+    }
+  }
+
+  Future<void> loginUsers(BuildContext context) async {
+    isLoading.value = true;
+
+    final loginData = {
+      "email": emailController.text.trim(),
+      "password": passwordController.text,
+    };
+
+    try {
+      final response = await loginRepository.loginApi(loginData);
+      await StorageHelper.saveUserData(response);
+
+      isLoading.value = false;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Login Successful"),
+          backgroundColor: Colors.green,
+        ),
+      );
+      Get.offAllNamed('/bootom');
+    } catch (ex) {
+      isLoading.value = false;
+
+      final errorMsg = ex.toString().replaceFirst("Exception: ", "");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMsg), backgroundColor: Colors.red),
       );
     }
   }

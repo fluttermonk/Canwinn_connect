@@ -6,6 +6,7 @@ import 'package:canwinn_project/View/widgets/Customtext.dart';
 import 'package:canwinn_project/View/widgets/Socialbutton.dart';
 import 'package:canwinn_project/ViewModel/Controller/bottom_nav_controller.dart';
 import 'package:canwinn_project/ViewModel/Controller/login_controllers.dart';
+import 'package:canwinn_project/ViewModel/Controller/registers_users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,8 +18,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  LoginController loginController = Get.put(LoginController());
   PasswordController passwordController = Get.put(PasswordController());
+  RegistersController registersController = Get.put(RegistersController());
 
   final _key = GlobalKey<FormState>();
   @override
@@ -43,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 10.w),
                   CustomTextField(
-                    controller: loginController.emailController,
+                    controller: registersController.emailController,
                     obscureText: false,
                     label: 'email'.tr,
                     prefiximage: Image.asset(mailIcon, width: 20, height: 20),
@@ -57,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 10.w),
                   Obx(
                     () => CustomTextField(
-                      controller: loginController.passwordController,
+                      controller: registersController.passwordController,
                       obscureText: passwordController.isPasswordHidden.value,
                       label: 'password'.tr,
                       prefiximage: Image.asset(
@@ -94,7 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: 'sign_in'.tr,
                     onPressed: () {
                       if (_key.currentState!.validate()) {
-                        loginController.loginUsers();
+                        registersController.loginUsers(context);
+
                         //authController.loginUser(email: emailController.text.toString(), password:passwordController.text.toString());
                       }
                     },

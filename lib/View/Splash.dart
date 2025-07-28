@@ -1,21 +1,35 @@
 import 'package:canwinn_project/Constants/image_constants.dart';
-import 'package:canwinn_project/View/Login.dart';
+import 'package:canwinn_project/helper/storage_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    Future.delayed(Duration(seconds:2),(){
-      Get.offNamed('/Login');
-    });
+    _navigateUser();
   }
+
+  void _navigateUser() async {
+    await Future.delayed(Duration(seconds: 2));
+
+    final token = StorageHelper.getToken();
+    print("Token:---${token}");
+
+    if (token != null && token.isNotEmpty) {
+      Get.offNamed('/bootom');
+    } else {
+      Get.offNamed('/Login');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(canWinn,width: 256.5937194824219,height: 336,)
-          ],
+          children: [Image.asset(canWinn, width: 256.59, height: 336)],
         ),
       ),
     );
