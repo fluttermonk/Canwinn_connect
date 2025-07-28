@@ -7,3 +7,11 @@ class BottomNavController extends GetxController {
     selectedIndex.value = index;
   }
 }
+
+class PasswordController extends GetxController {
+  var isPasswordHidden = true.obs;
+
+  void togglePasswordVisibility() {
+    isPasswordHidden.value = !isPasswordHidden.value;
+  }
+}

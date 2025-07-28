@@ -7,7 +7,7 @@ class PharmacyScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF4F4F9),
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         leading: BackButton(color: Colors.black),
         title: Text("24×7 Pharmacy", style: TextStyle(color: Colors.black)),

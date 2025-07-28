@@ -11,9 +11,9 @@ class ConfirmClinicVisitScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         title: const Text("Book Appointment"),
         leading: const BackButton(),
         actions: const [
@@ -33,7 +33,7 @@ class ConfirmClinicVisitScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage(ProfilePhoto), // Replace with your asset
+                  backgroundImage: AssetImage(profilePhoto), // Replace with your asset
                 ),
                 const SizedBox(width: 12),
                 Column(
@@ -134,7 +134,7 @@ class ConfirmClinicVisitScreen extends StatelessWidget {
       // Bottom Bar
       bottomNavigationBar: BottomAppBar(
         elevation: 10,
-        color: BackGroundColor,
+        color: backGroundColor,
         child: Container(
           height: 60,
           padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -21,11 +21,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:BackGroundColor,
+      backgroundColor:backGroundColor,
       appBar: AppBar(
         leading: BackButton(),
         title: Text("Profile",style: TextStyle(color: secondaryColor,fontWeight: FontWeight.bold),),
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         centerTitle: false,
 
       ),
@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           CircleAvatar(
                             radius: 40,
-                            backgroundImage: AssetImage(ProfilePhoto),
+                            backgroundImage: AssetImage(profilePhoto),
                           ),
                           const SizedBox(width: 8),
                           Column(
@@ -131,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     ListTile(
                       leading: Icon(Icons.history,color:secondaryColor),
-                      tileColor: BackGroundColor,
+                      tileColor: backGroundColor,
                       title:  Text("History"),
                       trailing: Icon(_historyExpanded ? Icons.expand_less : Icons.expand_more),
                       onTap: () {
@@ -142,7 +142,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     if (_historyExpanded) ...[
                       ListTile(
-                        tileColor: BackGroundColor,
+                        tileColor: backGroundColor,
                         title: const Text("Booking History"),
                         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                         onTap: () {
@@ -150,7 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         },
                       ),
                       ListTile(
-                        tileColor: BackGroundColor,
+                        tileColor: backGroundColor,
                         title: const Text("Payment History"),
                         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                         onTap: () {
@@ -196,7 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
                             ),
-                            child: Text("Refer Now",style: Mostly,),
+                            child: Text("Refer Now",style: mostly,),
                           ),
                         ],
                       ),
@@ -262,7 +262,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildTile(IconData icon, String label, VoidCallback onTap) {
     return Card(
       child: ListTile(
-        tileColor: BackGroundColor,
+        tileColor: backGroundColor,
         leading: Icon(icon,color: secondaryColor,),
         title: Text(label),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),

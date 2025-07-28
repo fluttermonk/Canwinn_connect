@@ -23,9 +23,9 @@ class _AmbulanceServiceScreenState extends State<AmbulanceServiceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         leading: BackButton(),
         title: const Text('Ambulance Service'),
       ),
@@ -86,7 +86,7 @@ class _AmbulanceServiceScreenState extends State<AmbulanceServiceScreen> {
                 child: Column(
                   children: [
                     Image.asset(
-                      Siren,
+                      siren,
                       height: 100,
                     ),
                     const SizedBox(height: 10),

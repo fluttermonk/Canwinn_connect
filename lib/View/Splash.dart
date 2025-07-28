@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(Canwinn,width: 256.5937194824219,height: 336,)
+            Image.asset(canWinn,width: 256.5937194824219,height: 336,)
           ],
         ),
       ),

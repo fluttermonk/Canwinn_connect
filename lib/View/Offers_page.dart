@@ -15,7 +15,7 @@ class OffersScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         title: const Text(
           'Offers',
@@ -71,7 +71,7 @@ class OffersScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(
-                            Offercleaning,
+                            offerCleaning,
                             height: 100,
                             width: double.infinity,
                             fit: BoxFit.cover,
@@ -132,7 +132,7 @@ class OffersScreen extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            Homecleaning,
+                            homeCleaning,
                             height: 60,
                             width: 60,
                             fit: BoxFit.cover,

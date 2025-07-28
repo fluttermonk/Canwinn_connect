@@ -28,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -42,7 +42,7 @@ class _DashboardState extends State<Dashboard> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Image.asset(
-                          canwinnconnect,
+                          canWinnConnect,
                           height: 10.sp,
                           fit: BoxFit.contain,
                         ),
@@ -51,7 +51,7 @@ class _DashboardState extends State<Dashboard> {
                     CircleAvatar(
                       radius: 18.sp,
                       backgroundColor: Colors.white,
-                      child: Image.asset(Notifications),
+                      child: Image.asset(notifications),
                     )
                   ],
                 ),
@@ -61,13 +61,13 @@ class _DashboardState extends State<Dashboard> {
                     Text(
                       " Schotest F-259 Ansal Corporate...",
                       style: TextStyle(
-                          color: DashboardTextcolor, fontSize: 12.sp),
+                          color: dashboardTextColor, fontSize: 12.sp),
                     ),
                     GestureDetector(
                       onTap: () {
                         print("Tapped on image ");
                       },
-                      child: Image.asset(dropdownbutton),
+                      child: Image.asset(dropDownButton),
                     ),
                   ],
                 ),
@@ -82,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
                   padding: const EdgeInsets.all(12.0),
                   height: 120,
                   decoration: BoxDecoration(
-                    color: BannerColor,
+                    color: bannerColor,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Row(
@@ -124,7 +124,7 @@ class _DashboardState extends State<Dashboard> {
                                 child: Text(
                                   "Join",
                                   style: TextStyle(
-                                      fontSize: 13, color: BoldTextColor),
+                                      fontSize: 13, color: boldTextColor),
                                 ),
                               ),
                               SizedBox(width: 3),
@@ -140,7 +140,7 @@ class _DashboardState extends State<Dashboard> {
                                   MaterialTapTargetSize.shrinkWrap,
                                   minimumSize: Size(0, 0),
                                 ),
-                                child: Image.asset(Forwardsign),
+                                child: Image.asset(forwardSign),
                               ),
                             ],
                           ),
@@ -148,7 +148,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       SizedBox(width: 7.sp),
                       Image.asset(
-                        Joinus,
+                        joinUs,
                         height: 100.spMax,
                       ),
                     ],
@@ -157,17 +157,17 @@ class _DashboardState extends State<Dashboard> {
                 SizedBox(height: 5.sp),
                 Row(
                   children: [
-                    Text("Categories", style: Categories),
+                    Text("Categories", style: categories),
                     SizedBox(width: 2.sp),
                     GestureDetector(
                       onTap: () {
                         print("Pressed");
                       },
                       child: Image.asset(
-                        Forwardsign,
+                        forwardSign,
                         height: 20.sp,
                         width: 20.sp,
-                        color: BoldTextColor,
+                        color: boldTextColor,
                       ),
                     )
                   ],
@@ -184,7 +184,7 @@ class _DashboardState extends State<Dashboard> {
                   children: [
                     CustomServiceCard(
                       title: 'Hospital Near Me',
-                      imagePath: hospitalNearme,
+                      imagePath: hospitalNearMe,
                       onTap: () {
                         Get.to(HospitalListScreen());
                       },
@@ -198,7 +198,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     CustomServiceCard(
                       title: 'Appliance Repair',
-                      imagePath: appliancerepair,
+                      imagePath: applianceRepair,
                       onTap: () {
                         Get.to(ApplianceRepairScreen());
                       },
@@ -210,12 +210,12 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     CustomServiceCard(
                       title: 'Lab Test',
-                      imagePath: Labtest,
+                      imagePath: labTest,
                       onTap: () {},
                     ),
                     CustomServiceCard(
                       title: 'Education Skill Center',
-                      imagePath: Educationcentre,
+                      imagePath: educationCentre,
                       onTap: () {},
                     ),
                   ],
@@ -242,7 +242,7 @@ class _DashboardState extends State<Dashboard> {
                         radius: 30.sp,
                         backgroundColor: Colors.white,
                         child: Image.asset(
-                          beautyandwellness,
+                          beautyAndWellness,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -278,15 +278,15 @@ class _DashboardState extends State<Dashboard> {
                   height: 220,
                   width: 412,
                   decoration: BoxDecoration(
-                    color: White,
+                    color: white,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(Earn1000, style: Earn100),
+                      Text('earn_1000'.tr, style: earn100),
                       SizedBox(height: 5.sp),
-                      Text(Geta, style: Getaa),
+                      Text('get_a'.tr, style: getaa),
                       SizedBox(height: 5.sp),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -300,7 +300,7 @@ class _DashboardState extends State<Dashboard> {
                               ),
                             ),
                             child:
-                            Text("Refer Now", style: TextStyle(color: White)),
+                            Text("Refer Now", style: TextStyle(color: white)),
                           ),
                           SizedBox(width: 16),
                           Expanded(

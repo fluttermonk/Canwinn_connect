@@ -7,7 +7,7 @@ class BedAvailabilityScreen extends StatelessWidget {
     'beds': '12',
     'name': 'City General Hospital',
     'address': 'F-259, Palam Vihar Schotest, gurgram, Hariyana',
-    'image': HospitalImage, // Replace with actual path
+    'image': hospitalImage, // Replace with actual path
   });
 
   @override
@@ -15,11 +15,11 @@ class BedAvailabilityScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Bed Availability"),
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         leading: BackButton(color: Colors.black),
       ),
-      backgroundColor: BackGroundColor, // Background as per screenshot
+      backgroundColor: backGroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

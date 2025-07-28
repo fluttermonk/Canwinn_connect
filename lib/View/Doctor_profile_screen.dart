@@ -10,9 +10,9 @@ class DoctorProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:BackGroundColor,
+      backgroundColor:backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         title: const Text('Dr. Aisha Sukhani (MBBS)'),
         leading: const BackButton(),
         actions: const [
@@ -33,7 +33,7 @@ class DoctorProfileScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage(ProfilePhoto), // Add image
+                  backgroundImage: AssetImage(profilePhoto), // Add image
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -117,7 +117,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     height: 20, // 👈 Custom height
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: OTPBorderColor,
+                      color: otpBorderColor,
                       borderRadius: BorderRadius.circular(5),
                     ),
                   child: const Text(
@@ -148,7 +148,7 @@ class DoctorProfileScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 8,
-        color: BackGroundColor,
+        color: backGroundColor,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         child: 
         Row(
@@ -158,7 +158,7 @@ class DoctorProfileScreen extends StatelessWidget {
                 Get.to(ConfirmClinicVisitScreen());
               }, child: Text("Book Clinic Visit",style: TextStyle(color: Colors.white),),
               style: ElevatedButton.styleFrom(
-                backgroundColor: OTPBorderColor,
+                backgroundColor: otpBorderColor,
               
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -170,7 +170,7 @@ class DoctorProfileScreen extends StatelessWidget {
               child: ElevatedButton(onPressed: (){
               }, child: Text("Call Clinic",style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: OTPBorderColor,
+                    backgroundColor: otpBorderColor,
               
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),

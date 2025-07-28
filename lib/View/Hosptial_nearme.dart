@@ -33,9 +33,9 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         leading: BackButton(color: Colors.black),
         title: Text(
@@ -116,7 +116,7 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
                               Get.to(HospitalDetailsScreen());
                             },
                             icon: Icon(Icons.info_outline,color: Colors.white,),
-                            label: Text("View Details", style: Mostly),
+                            label: Text("View Details", style: mostly),
                           ),
                         ),
                         SizedBox(width: 12),
@@ -132,7 +132,7 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
                               // TODO: Call logic
                             },
                             icon: Icon(Icons.call,color: Colors.white,),
-                            label: Text("Call Now", style: Mostly),
+                            label: Text("Call Now", style: mostly),
                           ),
                         ),
                       ],

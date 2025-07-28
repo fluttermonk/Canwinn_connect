@@ -18,9 +18,9 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackGroundColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: BackGroundColor,
+        backgroundColor: backGroundColor,
         elevation: 0,
         leading: const BackButton(color: Colors.black),
         title: const Text(
@@ -37,7 +37,7 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                HospitalDetailImage,
+                hospitalDetailImage,
                 height: 150,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -153,7 +153,7 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
                 itemBuilder: (_, index) => ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
-                    child: Image.asset(InteriorImage),
+                    child: Image.asset(interiorImage),
                     width: 100,
                     color: Colors.white,
                   ),
@@ -189,7 +189,7 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(child: Image.asset(Doctor)),
+                      CircleAvatar(child: Image.asset(doctor)),
                       const SizedBox(width: 10),
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,7 +254,7 @@ class _HospitalDetailsScreenState extends State<HospitalDetailsScreen> {
       children: [
         CircleAvatar(
           radius: 30,
-          backgroundImage: AssetImage(ProfilePhoto),
+          backgroundImage: AssetImage(profilePhoto),
           backgroundColor: Colors.grey[300],
         ),
         const SizedBox(height: 6),

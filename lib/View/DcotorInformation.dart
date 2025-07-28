@@ -57,7 +57,7 @@ class DoctorsAppointmentPage extends StatelessWidget {
                     consultationFee: 1000,
                     date: "Saturday, January, 2025",
                     time: "4.00 pm - 10.00 pm",
-                    image:ProfilePhoto , // Replace with local or asset image
+                    image:profilePhoto , // Replace with local or asset image
                   ),
                   DoctorProfileCard(
                     name: "Dr. Aisha Sukhani",
@@ -69,7 +69,7 @@ class DoctorsAppointmentPage extends StatelessWidget {
                     consultationFee: 1000,
                     date: "Saturday, January, 2025",
                     time: "4.00 pm - 10.00 pm",
-                    image: ProfilePhoto,
+                    image: profilePhoto,
                   ),
 
                   const SizedBox(height: 12),
@@ -94,7 +94,7 @@ class DoctorsAppointmentPage extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               radius: 28,
-                              backgroundImage: AssetImage(ProfilePhoto),
+                              backgroundImage: AssetImage(profilePhoto),
                             ),
                             const SizedBox(width: 12),
                             Expanded(
